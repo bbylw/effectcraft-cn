@@ -1,7 +1,32 @@
+import type { CSSProperties } from "react";
 import { Fragment } from "react";
 import { exportFormats, exportNotes } from "../data";
 
-const groups = ["视频", "图像", "音频", "交换"];
+function FormatTable({ groups }: { groups: string[] }) {
+  return (
+    <table className="table">
+      <tbody>
+        {groups.map((group) => (
+          <Fragment key={group}>
+            <tr className="group-row">
+              <th scope="colgroup" colSpan={2}>
+                {group}
+              </th>
+            </tr>
+            {exportFormats
+              .filter((format) => format.group === group)
+              .map((format) => (
+                <tr key={format.name}>
+                  <th scope="row">{format.name}</th>
+                  <td className="dim">{format.detail}</td>
+                </tr>
+              ))}
+          </Fragment>
+        ))}
+      </tbody>
+    </table>
+  );
+}
 
 export function Export() {
   return (
@@ -20,46 +45,34 @@ export function Export() {
           </p>
         </div>
 
-        <div className="animation-grid">
-          <figure className="shot" data-reveal>
-            <img
-              src="/images/render-queue.webp"
-              alt="渲染队列面板，其中排队了两个合成"
-              width={1960}
-              height={324}
-              loading="lazy"
-            />
-            <figcaption>渲染队列 · 两个合成排队 · 同一队列可从命令行运行</figcaption>
-          </figure>
-          <div>
-            <ul className="note-list" data-reveal>
-              {exportNotes.map((note) => (
-                <li key={note}>{note}</li>
-              ))}
-            </ul>
-          </div>
+        <figure className="shot export-shot" data-reveal>
+          <img
+            src="/images/render-queue-crop.webp"
+            alt="渲染队列面板，其中排队了两个合成"
+            width={1960}
+            height={324}
+            loading="lazy"
+          />
+          <figcaption>渲染队列 · 两个合成排队 · 同一队列可从命令行运行</figcaption>
+        </figure>
 
-          <table className="table" data-reveal>
-            <tbody>
-              {groups.map((group) => (
-                <Fragment key={group}>
-                  <tr className="group-row">
-                    <th scope="colgroup" colSpan={2}>
-                      {group}
-                    </th>
-                  </tr>
-                  {exportFormats
-                    .filter((format) => format.group === group)
-                    .map((format) => (
-                      <tr key={format.name}>
-                        <th scope="row">{format.name}</th>
-                        <td className="dim">{format.detail}</td>
-                      </tr>
-                    ))}
-                </Fragment>
-              ))}
-            </tbody>
-          </table>
+        <ul className="note-list export-notes" data-reveal>
+          {exportNotes.map((note) => (
+            <li key={note}>{note}</li>
+          ))}
+          <li>
+            Lottie 双向：导出 .json 或 .lottie，并列出 Lottie
+            无法表达的内容；导入则作为一个新合成打开。
+          </li>
+        </ul>
+
+        <div
+          className="export-tables"
+          data-reveal
+          style={{ "--d": "90ms" } as CSSProperties}
+        >
+          <FormatTable groups={["视频"]} />
+          <FormatTable groups={["图像", "音频", "交换"]} />
         </div>
       </div>
     </section>

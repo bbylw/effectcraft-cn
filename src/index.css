@@ -555,6 +555,27 @@ kbd {
   background: var(--accent);
 }
 
+/* ---------- export ---------- */
+
+.export-shot {
+  margin: 0;
+}
+
+.export-notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 40px;
+  margin: clamp(28px, 3vw, 44px) 0 0;
+}
+
+.export-tables {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 3vw, 56px);
+  margin-top: clamp(28px, 3vw, 44px);
+  align-items: start;
+}
+
 /* ---------- agents ---------- */
 
 .agents-grid {
@@ -884,6 +905,14 @@ kbd {
 
   .workbench-left {
     position: static;
+  }
+
+  .export-notes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .export-tables {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .spec-strip {
