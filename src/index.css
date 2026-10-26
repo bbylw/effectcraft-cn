@@ -951,8 +951,7 @@ kbd {
 }
 
 @media (max-width: 860px) {
-  .header-nav,
-  .header-bar > .btn {
+  .header-nav {
     display: none;
   }
 

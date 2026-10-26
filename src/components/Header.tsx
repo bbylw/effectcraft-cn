@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { links, navItems } from "../data";
-import { DownloadIcon } from "./Icons";
+import { navItems } from "../data";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -47,10 +46,6 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <a className="btn" href={links.site}>
-          <DownloadIcon />
-          下载
-        </a>
         <button
           className="menu-toggle"
           type="button"
@@ -73,9 +68,6 @@ export function Header() {
             {item.label}
           </a>
         ))}
-        <a href={links.site} onClick={() => setOpen(false)}>
-          在 getartcraft.com 下载
-        </a>
       </nav>
     </header>
   );
