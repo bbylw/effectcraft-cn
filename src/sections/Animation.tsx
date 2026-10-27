@@ -21,8 +21,8 @@ export function Animation() {
             <img
               src="/images/graph-editor.webp"
               alt="图表编辑器显示文字动画器范围起点的缓动数值曲线，以及定格、线性、自动贝塞尔与 Easy Ease 按钮栏"
-              width={1960}
-              height={1080}
+              width={1920}
+              height={1166}
               loading="lazy"
             />
             <figcaption>图表编辑器 · 数值图与速度图 · 可拖拽控制柄</figcaption>

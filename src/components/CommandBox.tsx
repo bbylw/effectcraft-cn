@@ -92,7 +92,12 @@ export function CommandBox() {
             </div>
           ))}
         </dl>
-        <p className="cmd-json">
+        <p
+          className="cmd-json"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           <code>{json}</code>
         </p>
       </div>

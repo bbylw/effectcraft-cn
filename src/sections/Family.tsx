@@ -29,7 +29,7 @@ export function Family() {
                 </th>
                 <td className="dim">{app.use}</td>
                 <td>
-                  <a href={app.href}>
+                  <a href={app.href} aria-label={`${app.name} 官网`}>
                     官网
                   </a>
                 </td>
@@ -41,7 +41,7 @@ export function Family() {
               </th>
               <td className="dim">AI 图像与视频工作室，为想要真正掌控权的艺术家</td>
               <td>
-                <a href={links.artcraft}>
+                <a href={links.artcraft} aria-label="ArtCraft 官网">
                   官网
                 </a>
               </td>

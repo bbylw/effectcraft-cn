@@ -30,12 +30,12 @@ export function Workbench() {
           </p>
         </div>
 
-        <figure className="shot" data-reveal>
+        <figure className="shot workbench-shot" data-reveal>
           <img
             src="/images/effect-controls.webp"
             alt="列出粒子系统参数的特效控制面板，数值可内联编辑"
-            width={1960}
-            height={1080}
+            width={437}
+            height={860}
             loading="lazy"
           />
           <figcaption>特效控制面板 · 参数名、顺序与默认值逐项可读</figcaption>

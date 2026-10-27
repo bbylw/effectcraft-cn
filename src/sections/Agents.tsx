@@ -45,7 +45,10 @@ export function Agents() {
                     </th>
                     <td className="dim">
                       {method.body}{" "}
-                      <a href={method.href}>
+                      <a
+                        href={method.href}
+                        aria-label={`${method.name} 文档`}
+                      >
                         文档
                       </a>
                     </td>

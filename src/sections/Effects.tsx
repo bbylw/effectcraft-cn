@@ -28,8 +28,8 @@ export function Effects() {
             <img
               src="/images/effects.webp"
               alt="一次 CC Particle World 爆发叠加辉光"
-              width={1960}
-              height={1080}
+              width={1920}
+              height={1166}
               loading="lazy"
             />
             <figcaption>模拟 · CC Particle World 爆发叠加辉光</figcaption>
@@ -38,8 +38,8 @@ export function Effects() {
             <img
               src="/images/3d-canvas.webp"
               alt="自定义视图中被聚光灯照亮的相交卡片，投下柔和阴影"
-              width={1960}
-              height={1080}
+              width={1030}
+              height={580}
               loading="lazy"
             />
             <figcaption>经典 3D · 聚光灯 · 柔和光线追踪阴影</figcaption>

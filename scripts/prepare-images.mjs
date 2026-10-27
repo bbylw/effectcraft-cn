@@ -1,3 +1,4 @@
+// Requires the local assets-src/screenshots directory (not committed).
 import sharp from "sharp";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
@@ -13,11 +14,6 @@ const jobs = [
     input: "3d.png",
     output: "3d-canvas.webp",
     extract: { left: 685, top: 201, width: 1030, height: 580 },
-  },
-  {
-    input: "render-queue.png",
-    output: "render-queue.webp",
-    extract: { left: 0, top: 837, width: 1960, height: 618 },
   },
   {
     input: "effects.png",

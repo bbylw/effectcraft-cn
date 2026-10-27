@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist-ssr/
 .taste-skill/
 .playwright-cli/
 assets-src/

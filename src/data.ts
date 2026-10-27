@@ -181,7 +181,7 @@ export const commandExamples = [
 export const statusFigures = [
   { value: "91", unit: "％", label: "目标功能对齐", href: links.parity },
   { value: "45", unit: "％", label: "迈向成熟生产的估计", href: links.parity },
-  { value: "2026-10-01", unit: "", label: "首个提交" },
+  { value: "2026-10-01", unit: "", label: "首个提交", compact: true },
   { value: "1.95", unit: "+", label: "所需 Rust 版本" },
 ];
 

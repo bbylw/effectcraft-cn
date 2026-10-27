@@ -6,6 +6,16 @@ export function Header() {
   const [current, setCurrent] = useState("");
 
   useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 861px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    closeOnDesktop();
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
+
+  useEffect(() => {
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -61,7 +71,6 @@ export function Header() {
         id="mobile-nav"
         aria-label="页面导航"
         data-open={open}
-        hidden={!open}
       >
         {navItems.map((item) => (
           <a key={item.href} href={item.href} onClick={() => setOpen(false)}>

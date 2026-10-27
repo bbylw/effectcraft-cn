@@ -2,10 +2,21 @@ import type { CSSProperties } from "react";
 import { Fragment } from "react";
 import { exportFormats, exportNotes } from "../data";
 
-function FormatTable({ groups }: { groups: string[] }) {
+function FormatTable({
+  groups,
+  caption,
+}: {
+  groups: string[];
+  caption: string;
+}) {
   return (
     <table className="table">
+      <caption className="table-caption">{caption}</caption>
       <tbody>
+        <tr className="col-head">
+          <th scope="col">格式</th>
+          <th scope="col">说明</th>
+        </tr>
         {groups.map((group) => (
           <Fragment key={group}>
             <tr className="group-row">
@@ -71,8 +82,11 @@ export function Export() {
           data-reveal
           style={{ "--d": "90ms" } as CSSProperties}
         >
-          <FormatTable groups={["视频"]} />
-          <FormatTable groups={["图像", "音频", "交换"]} />
+          <FormatTable groups={["视频"]} caption="视频导出格式" />
+          <FormatTable
+            groups={["图像", "音频", "交换"]}
+            caption="图像、音频与交换格式"
+          />
         </div>
       </div>
     </section>

@@ -20,9 +20,14 @@ export function Status() {
         <div className="status-figures" data-reveal>
           {statusFigures.map((figure) => (
             <div className="status-figure" key={figure.label}>
-              <span className="value">
+              <span className={figure.compact ? "value value--date" : "value"}>
                 {figure.href ? (
-                  <a href={figure.href}>{figure.value}</a>
+                  <a
+                    href={figure.href}
+                    aria-label={`${figure.label} ${figure.value}${figure.unit}`}
+                  >
+                    {figure.value}
+                  </a>
                 ) : (
                   figure.value
                 )}

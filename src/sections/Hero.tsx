@@ -32,8 +32,8 @@ export function Hero() {
             <img
               src="/images/hero.webp"
               alt="EffectCraft 主窗口：合成面板中的动画演示合成、项目面板、带文字与形状图层的时间轴，以及属性面板"
-              width={1960}
-              height={1102}
+              width={1920}
+              height={1166}
             />
             <figcaption>主窗口 · 动画演示合成 · 项目与属性面板</figcaption>
           </figure>
